@@ -1,7 +1,7 @@
 
 # Get comfy with R
 
-This lesson is modified from materials of the STEMinist_R lessons produced by several UC Davis graduate student and which can be found [here](https://github.com/ecalfee/STEMinist_R.git). 
+This lesson is adapted from a version adapted by Selena Caplins from the STEMinist_R lessons produced by several UC Davis graduate students, found [here](https://github.com/ecalfee/STEMinist_R.git). 
 
 You can download the R files for these exercises via wget in the terminal with the following link:
 
@@ -13,7 +13,7 @@ This is a commpressed file that can be uncompressed via:
 ```
 tar -xzvf week5_semester.tar.gz
 ```
-You can now open R and load in the R_Day_1_Lesson.R file. You can see it contains many commented sections that begin with a `#`. This allows you to add comments to your code, explaining what you are doing for each line of code. Commenting code is very important! It explains to someone else what your code does, and can even be useful when you revisit your own code after a few weeks/months/years. Be nice to your future self, comment your code. 
+You can now open R and load in the R_Day_1_Lesson.R file. You can see it contains many commented sections that begin with a `#`. This allows you to add comments to your code, explaining what you are doing for each line of code. Commenting code is very important! It explains to someone else what your code does, and can be useful to your future self. Comment your code! 
 
 The next section contains the commented out code and the script that is run in R in a format that is more easily readable on a website.
 
