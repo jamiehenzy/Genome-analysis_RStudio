@@ -679,6 +679,7 @@ max(iris[,'Petal.Length'][iris[,'Species']=='virginica']) - min(iris[,'Petal.Len
 ```
 </p>
 </details>
+
 > 13. What proportion of flowers in the dataset have petals wider than 1cm?
 
 <details><summary><span style="color: blue;">Solution</span></summary>
@@ -691,9 +692,9 @@ sum(iris[,'Petal.Width'] > 1 ) / nrow(iris) ## here, we're counting up how many 
 </details>
 
 > 14. Create a new column within your dataframe, called sepalCategory, and set all values equal to 'long'
->       Subset short values of this column, and set their values to 'short'
->       (Short sepals are those less than 5.5 cm)
->       How many plants with short sepals are there? How many long?
+       Subset short values of this column, and set their values to 'short'
+       (Short sepals are those less than 5.5 cm)
+       How many plants with short sepals are there? How many long?
 
 <details><summary><span style="color: blue;">Solution</span></summary>
 <p>
