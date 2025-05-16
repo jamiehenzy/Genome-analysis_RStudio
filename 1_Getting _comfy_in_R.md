@@ -1,6 +1,6 @@
 # The R environment
 
-This lesson is modified from materials of the STEMinist_R lessons found [here](https://github.com/ecalfee/STEMinist_R.git), which were in turn modified by Selena Caplins of the NU Explorer team, which were in turn modified by me!
+This lesson is modified from materials of the STEMinist_R lessons found [here](https://github.com/ecalfee/STEMinist_R.git), which were in turn modified by Serena Caplins of the NU Explorer team, which were in turn modified by me!
 
 ## Get the files into the directory from which you'll be working
 
