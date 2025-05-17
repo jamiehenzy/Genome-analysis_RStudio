@@ -2,9 +2,11 @@
 
 This material is double-adapted! It is drawn from an adapted version of the STEMinist_R materials which can be found [here](https://github.com/ecalfee/STEMinist_R.git). The adapted version appeared in Serena Caplin's marine genomics course.
 
+Before beginning this tutorial, go to our course data folder and copy Exer_1.R, Exer_2.R, and Exer_3.R from the 04_Plot folder into your own directory. For the exercises you'll read these into RStudio and fill in the commands as you go.
+
 ## Plotting 
 
-The R scripts to accompany the exercises are available in our course data directory (04_Plots). Copy them into your own directory.
+Launch an RStudio session and open a new script. As you work through the tutorial, comment the script. Save your session for your assignment submission.
 
 * Here are some useful commands that we will cover:
   + points()
@@ -102,7 +104,9 @@ Another example looking at sleep variation across the different types of consume
 plot(msleep$sleep_total~as.factor(msleep$vore),col=rainbow(4), xlab="REM Sleep (hours)", ylab= "Total Sleep (hours)")
 ```
 
-## Exercise 1.1
+## Exercise 1
+Read Exer_1.R into your RStudio session and proceed with the exercise by filling in the commands as you go. Don't forget to save your work for submission!
+
 > Read in the data using `data(ChickWeight)`
 
 ```{r, echo=T}
@@ -289,7 +293,8 @@ ggplot(ChickWeight, aes(x=Time, y=weight, group=Diet, color=Diet))+
                aes(width=0.1), size=0.5)
 ```
 
-## Exercise 1.2 Plotting in ggplot2
+## Exercise 2 Plotting in ggplot2
+Read Exer_2.R into your RStudio session and proceed with the exercise, filling in the commands. Don't forget to save your work for submission!
 
 > 1. Add best fit lines to our msleep plot for each vore.
 
