@@ -2,7 +2,7 @@
 
 This material is double-adapted! It is drawn from an adapted version of the STEMinist_R materials which can be found [here](https://github.com/ecalfee/STEMinist_R.git). The adapted version appeared in Serena Caplin's marine genomics course.
 
-Before beginning this tutorial, go to our course data folder and copy Exer_1.R, Exer_2.R, and Exer_3.R from the 04_Plot folder into your own directory. For the exercises you'll read these into RStudio and fill in the commands as you go.
+Before beginning this tutorial, go to our course data folder and copy Exer_1.R and Exer_2.R from the 04_Plot folder into your own directory. For the exercises you'll read these into RStudio and fill in the commands as you go.
 
 ## Plotting 
 
