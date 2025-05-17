@@ -1,14 +1,4 @@
-We finish by tackling a challenge! 
+## Challenge! ## 
 
-Please download the exercise here 
-```html
-wget https://raw.githubusercontent.com/BayLab/MarineGenomicsData/main/R_Final_Challenges/chickWeightChallenge_week7_semester.R
-```
+Read Challenge.R (in our course data folder for 04_Plots) into your RStudio session and take the challenge! 
 
-
-And the solutions are here
-
-```html
-
-wget https://raw.githubusercontent.com/BayLab/MarineGenomicsData/main/R_Final_Challenges/ChickWeight_Challenge_SOLUTIONS.pdf
-```
