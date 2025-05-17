@@ -1,5 +1,6 @@
-# Week 7 For loops and the apply family of functions
+# For loops and the apply family of functions
 
+For this exercise use the R script Exer_4.R.
 A few useful commands: function(), is.na, which, var, length, for(){ }, 
  points, print, paste, plot, unique, sample
  
@@ -94,8 +95,9 @@ apply(states,
       2, # apply over columns of my_states
       function(x) tapply(x, state.region, mean)) # each column = variable of interest for tapply
 ```
-## Exercise 2.3 apply and tapply
-> # Exercise 2.3
+## Exercise 4: apply and tapply
+Read in exer_4.R script for this exercise.
+> # Exercise 4
 A few useful commands: function(){ }, apply(), tapply(), hist(), dim(), prod(), sd()
 > 1. what is the average population, income, and area of all 50 states ins the `states` dataset
 
@@ -207,18 +209,3 @@ sapply(colnames(states), function(x)hist(states[ , x],main = x, xlab = x,col = "
 </p>
 </details>
 
-
-For the final day covering basics in R we will have a coding session where we tackle a challenge exercise on a dataset. 
-
-Please download the exercise here 
-```html
-wget https://raw.githubusercontent.com/BayLab/MarineGenomicsData/main/R_Final_Challenges/chickWeightChallenge_week7_semester.R
-```
-
-
-And the solutions are here
-
-```html
-
-wget https://raw.githubusercontent.com/BayLab/MarineGenomicsData/main/R_Final_Challenges/ChickWeight_Challenge_SOLUTIONS.pdf
-```
