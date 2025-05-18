@@ -2,7 +2,15 @@
 
 This material is double-adapted! It is drawn from an adapted version of the STEMinist_R materials which can be found [here](https://github.com/ecalfee/STEMinist_R.git). The adapted version appeared in Serena Caplin's marine genomics course.
 
-Before beginning this tutorial, go to our course data folder and copy Exer_1.R and Exer_2.R from the 04_Plot folder into your own directory. For the exercises you'll read these into RStudio and fill in the commands as you go.
+## Get the files into the directory from which you'll be working
+
+Before beginning this tutorial, copy into your own directory "RStudio.tar.gz" from the course data folder for this module. This is a compressed "tar ball" that contains a set of exercises. To uncompress it, use:
+
+```
+tar -xzvf RStudio.tar.gz
+```
+The contents include three sets of exercises that already have the questions listed as hash-comments. You'll read these into RStudio and fill in the commands as you go.
+
 
 ## Plotting 
 
@@ -105,7 +113,7 @@ plot(msleep$sleep_total~as.factor(msleep$vore),col=rainbow(4), xlab="REM Sleep (
 ```
 
 ## Exercise 1
-Read Exer_1.R into your RStudio session and proceed with the exercise by filling in the commands as you go. Don't forget to save your work for submission!
+Read **exer_1.R** into your RStudio session and proceed with the exercise by filling in the commands as you go. Don't forget to save your work for submission!
 
 ## Plotting with ggplot2 
 GGPlot is a package that allows you to make a lot of different kinds of plots and has become increasingly popular. There are also many tutorials on how to use ggplot as well as example code that could be modified to fit the data you're interested in plotting. There is a really helpful cheatsheat (here)[https://www.rstudio.com/wp-content/uploads/2015/03/ggplot2-cheatsheet.pdf]
@@ -209,4 +217,4 @@ ggplot(ChickWeight, aes(x=Time, y=weight, group=Diet, color=Diet))+
 ```
 
 ## Exercise 2 Plotting in ggplot2
-Read Exer_2.R into your RStudio session and proceed with the exercise, filling in the commands. Don't forget to save your work for submission!
+Read **exer_2.R** into your RStudio session and proceed with the exercise, filling in the commands. Don't forget to save your work for submission!
