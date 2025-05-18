@@ -9,7 +9,7 @@ Before beginning this tutorial, copy into your own directory "RStudio.tar.gz" fr
 ```
 tar -xzvf RStudio.tar.gz
 ```
-The contents include three sets of exercises that already have the questions listed as hash-comments. You'll read these into RStudio and fill in the commands as you go.
+The contents include three sets of exercises that already have the questions listed as hash-comments. In this tutorial and the next, you'll read these into RStudio and fill in the commands as you go.
 
 
 ## Plotting 
