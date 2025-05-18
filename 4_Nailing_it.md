@@ -1,7 +1,4 @@
 # For loops and the apply family of functions
-Before beginning this tutorial, go to our course data folder and copy Exer_3.R from the 04_Plot folder into your own directory.
-
-
 A few useful commands: function(), is.na, which, var, length, for(){ }, 
  points, print, paste, plot, unique, sample
  
