@@ -2,17 +2,11 @@
 
 This lesson is modified from materials of the STEMinist_R lessons found [here](https://github.com/ecalfee/STEMinist_R.git), which were in turn modified by Serena Caplins of the NU Explorer team, which were in turn modified by me!
 
-## Get the files into the directory from which you'll be working
-
-Copy into your own directory "RStudio.tar.gz" from the course data folder for this module. This is a compressed "tar ball" that contains a set of exercises. To uncompress it, use:
-
+For the three exercises (1.1, 1.2, and 1.3) open an Rscript and use hash-commenting to include the text of each question. For example, Exercise 1.1 would start like this:
 ```
-tar -xzvf RStudio.tar.gz
+# Exercise 1.1
+# 1. Perform an arithmetic calculation in the command line.
 ```
-You'll be using RStudio through Open On Demand (OOD) on Explorer, where you'll have access to the same directories you have been working with. Open an RStudio session on OOD. 
-
-You can now open R and load in the R_Day_1_Lesson.R file. You can see it contains many commented sections that begin with a `#`. This allows you to add comments to your code, explaining what you are doing for each line of code. Commenting code is very important! It explains to someone else what your code does, and can be useful when you revisit your own code after a few weeks/months/years. 
-
 ## Lesson 1: Orientation to R
 
 R can be used for basic arithmetic:
@@ -20,7 +14,6 @@ R can be used for basic arithmetic:
 ```{r , echo=T}
 5+10+23
 ```
-
 
 It can also store values in variables:
 
