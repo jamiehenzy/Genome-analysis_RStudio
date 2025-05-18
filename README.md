@@ -1,8 +1,7 @@
 # Genome-analysis_RStudio
-This repo contains material for Assignments 3 (RStudio) and 4 (Plots) of the Genome Analysis course at Northeastern University.
+This repo contains material for the RStudio assignment of the Genome Analysis course at Northeastern University.
 
-### Assignment 3 ###
-Tutorials 1 and 2
+### Submission ###
++ Tutorial 1: as saved R script in student directory
++ Tutorial 2: as saved R script in student directory
 
-### Assignment 4 ###
-Tutorials 3, 4, and Challenge
