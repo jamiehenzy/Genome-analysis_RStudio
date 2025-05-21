@@ -105,7 +105,7 @@ ls()
 ```
 
 ## EXERCISE 1.1 # 
-For purposes of submitting your work, enter the command `sink("<file_name>")` at the top of your script. This will create a file by the name you supplied and put all the output of your console into it. Do this for all three exercise sections in this tutorial.
+For each exercise set you'll submit your script with the commands you entered as well as the output that appears in the console. To save your output, enter the command `sink("<file_name>")` at the top of your script. This will create a file by the name you supplied and put all the output of your console into it. Do this for all three exercise sections in this tutorial.
 
 > 01. Open Rstudio and perform an arithmetic calculation in the command line.
 
