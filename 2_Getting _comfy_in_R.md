@@ -296,8 +296,9 @@ head(msleep)
 ```
 
 ## EXERCISE 1.2 
-> Reminder of those useful commands: dataframename[row , col], str(), dim(), nrow(), unique(), length(), rownames(), summary(), min(), max(), mean(), range(), levels(), factor(), as.factor(), class(), ncol(), nrow(), table(), sum(), quantile(), var()
-> We'll use the built-in 'iris' dataset. the command: `data(iris)` # this loads the 'iris' dataset. You can view more information about this dataset with `help(iris)` or `?iris`
+Reminder of those useful commands: dataframename[row , col], str(), dim(), nrow(), unique(), length(), rownames(), summary(), min(), max(), mean(), range(), levels(), factor(), as.factor(), class(), ncol(), nrow(), table(), sum(), quantile(), var()
+
+We'll use the built-in 'iris' dataset. the command: `data(iris)` # this loads the 'iris' dataset. You can view more information about this dataset with `help(iris)` or `?iris`
 
 > 01. How many rows are in the dataset?
 
