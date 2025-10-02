@@ -704,6 +704,7 @@ table(iris[,'sepalCategory'])
 ```
 </p>
 </details>    
+
 ## Submission
 + R script with all exercise questions hashed
 + Followed by commands
