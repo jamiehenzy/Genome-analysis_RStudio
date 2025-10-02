@@ -50,6 +50,8 @@
 
 **Knit your document**
    - Click the "Knit" button at the top of the editor (it has a ball of yarn icon)
+   - Use the same name for your file as above
    - RStudio will create an HTML file showing both your code AND the output
    - The HTML file will automatically open in a viewer or browser
+   - To view, use OOD to download, then open
 ```
