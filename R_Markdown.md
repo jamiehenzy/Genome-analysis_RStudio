@@ -9,7 +9,7 @@
 
 **Save your file**
    - Go to File → Save (or use Cmd+S / Ctrl+S)
-   - Give it a name like "Assignment1.Rmd"
+   - Give it a name like "Assignment1"
    - Save it in your desired location
 
 **You'll see a template document appear**
