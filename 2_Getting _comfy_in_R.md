@@ -2,11 +2,8 @@
 
 This lesson is modified from materials of the STEMinist_R lessons found [here](https://github.com/ecalfee/STEMinist_R.git), which were in turn modified by Serena Caplins of the NU Explorer team, which were in turn modified by me!
 
-For the three exercises (1.1, 1.2, and 1.3) open an Rscript and use hash-commenting to include the text of each question. For example, Exercise 1.1 would start like this:
-```
-# Exercise 1.1
-# 1. Perform an arithmetic calculation in the command line.
-```
+For the three exercises (1.1, 1.2, and 1.3) open an R Markdown script to capture each question, code, and output.
+
 ## Lesson 1: Orientation to R
 
 R can be used for basic arithmetic:
@@ -105,7 +102,7 @@ ls()
 ```
 
 ## EXERCISE 1.1 # 
-For each exercise set you'll submit your script with the commands you entered as well as the output that appears in the console. To save your output, enter the command `sink("<file_name>")` at the top of your script. This will create a file by the name you supplied and put all the output of your console into it. Do this for all three exercise sections in this tutorial.
+For each exercise set you'll submit an R Markdown script showing commands and output. 
 
 > 01. Open Rstudio and perform an arithmetic calculation in the command line.
 
@@ -706,6 +703,5 @@ table(iris[,'sepalCategory'])
 </details>    
 
 ## Submission
-+ R script with all exercise questions hashed
-+ Followed by commands
-+ Hash the answers (since they will only appear in Console, not in script)
++ R Markdown script with all exercise questions, code, and output
+
