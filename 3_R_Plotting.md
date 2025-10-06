@@ -90,6 +90,7 @@ plot(msleep$sleep_total~msleep$bodywt, pch = 16, col=msleep$colors, bty="L", xla
 ```
 In addition to scatterplots you can make histograms and boxplots in base R. The same parameter options (pch, col, ylab, xlab, etc) apply for these plots as well as scatterplots.
 R will automatically plot a barplot if you give to the `plot()` function a continuous variable and a factor. If you have a vector stored as a character converting it to a factor via `as.factor` will make a boxplot.
+
 ```{r, label='5-7', echo=T}
 #let's make a histogram of sleep_total and fill it with the color palette rainbow() which needs to know how many colors to use
 hist(msleep$sleep_total, col=rainbow(10))
@@ -97,7 +98,6 @@ hist(msleep$sleep_total, col=rainbow(10))
 #let's make a boxplot of sleep_total and order making each box a different color 
 plot(msleep$sleep_total~as.factor(msleep$order), col=rainbow(19)) 
 ```
-
 
 ```{r, label='5-8', echo=T}
 #Try a boxplot
@@ -108,14 +108,15 @@ Notice that the command above creates the exact same output as the previous comm
 Another example looking at sleep variation across the different types of consumers (carnivore, herbivore, insectivore and omnivore):
 
 ```{r, label='5-9', echo=T}
-plot(msleep$sleep_total~as.factor(msleep$vore),col=rainbow(4), xlab="REM Sleep (hours)", ylab= "Total Sleep (hours)")
+plot(msleep$sleep_total~as.factor(msleep$vore),col=rainbow(4), xlab="Bodyweight (grams)", ylab= "Total Sleep (hours)")
 ```
-#### Don't forget to "knit" and save your work for submission! To view, first DOWNLOAD the .html file from OOD, then open it. 
+
+#### Don't forget to "knit" and save your work for submission! To view, first DOWNLOAD the .html file from OOD, then open it on your computer (it will open in your browser). 
+
 ## Exercise 1
-Open **exer_1.Rmd** into your RStudio session and insert your code where indicated (remember to use the +C button). Don't forget to "knit" and save your work for submission! To view, first DOWNLOAD the .html file from OOD, then open it. 
+Open **exer_1.Rmd** into your RStudio session and insert your code where indicated (remember to use the +C button). Don't forget to "knit" and save your work for submission! 
 
 ## Plotting with ggplot2 
-
 There is a little bit of a learning curve for ggplot as the syntax is structured differently than base R plotting. One thing that remains the same and is even more noticible in ggplot is the iterative process of building a plot, one aspect at a time. 
 Let's demonstrate what ggplot can do with the states data set
 
@@ -124,6 +125,7 @@ Let's demonstrate what ggplot can do with the states data set
 data(state)
 states = as.data.frame(state.x77) # convert data to a familiar format - data frame
 str(states) # let's take a look at the dataframe
+
 #make an initial ggplot
 ggplot(data=states) 
 ```
@@ -147,19 +149,26 @@ ggplot(data=states, aes(x=Population, y=Income))+geom_point()+geom_smooth(method
 As you can already see ggplot works with many more parameters drawn in default than plotting in base R. For example, the background of our plot is grey the confidence interval of our line is drawn for us and is shaded dark grey and the line of best fit is in blue. All of these things can be modified if we wish. Many of these options can easily be changed with the `theme_` functions. 
 
 Let's change to a minimal theme which removes the gray background in the back of the plot. Play around with the other themes to see what they change.
+
 ```{r, label='5-17', echo=T}
 ggplot(data=states, aes(x=Population, y=Income))+geom_point()+geom_smooth(method="lm")+theme_minimal() 
 ```
+
 Another plot example:
+
 ```{r, label='5-18', echo=T}
 ggplot(data=states, aes(x=Income, y=Illiteracy, color=Population)) +geom_point()+geom_smooth(method="lm", color="red")+theme_classic() 
 ```
+
 Let's use the `msleep` data set to explore what ggplot can do with character vectors. Make a plot of total sleep against REM sleep and then group by "vore".
+
 ```{r, label='5-19', echo=T}
 # because our vore vector is a character vector we must convert it to a factor before we can use it to group or color
 ggplot(msleep, aes(y=sleep_total, x=sleep_rem, group=as.factor(vore), color=as.factor(vore))) +geom_point()
 ```
+
 That looks fine, but we may want to add axis labels and change the legend. The code below does just that and changes the theme.
+
 ```{r, label='5-20', echo=T}
 # as we add things to the plot the line can get really long, you can hit enter after the plus sign to start a new line
 ggplot(msleep, aes(y=sleep_total, x=sleep_rem, group=as.factor(vore), color=as.factor(vore)))+
@@ -178,7 +187,9 @@ ggplot(msleep, aes(y=sleep_total, x=sleep_rem, group=as.factor(vore), color=as.f
                                    "omni"="brown", 
                                    "NA"="orange"))
 ```
+
 Our plot at this point is getting very clunky. You can assign what we have so far to an object and continue to add parameters without having to copy and paste the whole plot. 
+
 ```{r, label='5-21', echo=T}
 #assign to an object
 g<-ggplot(msleep, aes(y=sleep_total, x=sleep_rem, group=as.factor(vore), color=as.factor(vore)))+
@@ -198,15 +209,19 @@ g<-ggplot(msleep, aes(y=sleep_total, x=sleep_rem, group=as.factor(vore), color=a
                                    "NA"="orange"))
 g
 ```
-One final example to share. I use ggplot often with data sets that have multiple character vectors and I want to see how they relate to my continuous variables. For example in the iris dataframe we may be interested in looking at the relationship between Sepal.Length and Sepal.Width for each species. You can look at all of these together with `facet_wrap` or `facet_grid`. 
+
+One final example to share. People often use ggplot with data sets that have multiple character vectors where they want to see how they relate to the continuous variables. For example in the iris dataframe we may be interested in looking at the relationship between Sepal.Length and Sepal.Width for each species. You can look at all of these together with `facet_wrap` or `facet_grid`. 
+
 ```{r, label='5-22', echo=T}
 ggplot(iris, aes(y=Sepal.Length, x=Sepal.Width, group=Species, color=Species))+
   geom_point()+
   facet_wrap(~Species)+
   geom_smooth(method="lm")
 ```
+
 Finally in ggplot we may be interested in seeing the mean values plotted with error bars for several groups. You can use the function `stat_summary` to find the mean and error around that mean for the given grouping.
 Here's a plot looking at the mean chickweight by diet.
+
 ```{r, label='5-23', echo=T}
 ggplot(ChickWeight, aes(x=Time, y=weight, group=Diet, color=Diet))+
   stat_summary(fun=mean, geom="point", size=1)+
