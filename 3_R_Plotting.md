@@ -2,9 +2,13 @@
 
 This material is double-adapted! It is drawn from an adapted version of the STEMinist_R materials which can be found [here](https://github.com/ecalfee/STEMinist_R.git). The adapted version appeared in Serena Caplin's marine genomics course.
 
+Before starting, copy exer_1.Rmd and exer_2.Rmd from the course data folder (within the data/RStudio directory) to your own directory that you'll be working from.
+
+Launch an RStudio session and open a new R markdown file to capture the questions, your code, and output. Save your session for your assignment submission.
+
 ## Plotting 
 
-Launch an RStudio session and open a new script. As you work through the tutorial, comment the script. Save your session for your assignment submission.
+GGPlot is a package that allows you to make a lot of different kinds of plots and has become increasingly popular. There are also many tutorials on how to use ggplot as well as example code that could be modified to fit the data you're interested in plotting. There is a really helpful cheatsheat (here)[https://www.rstudio.com/wp-content/uploads/2015/03/ggplot2-cheatsheet.pdf]. Before you dive fully in to ggplot's powers, however, you'll start with some more basic plotting techniques.
 
 * Here are some useful commands that we will cover:
   + points()
@@ -103,10 +107,10 @@ plot(msleep$sleep_total~as.factor(msleep$vore),col=rainbow(4), xlab="REM Sleep (
 ```
 
 ## Exercise 1
-Read **exer_1.R** into your RStudio session and proceed with the exercise by filling in the commands as you go. Don't forget to save your work for submission!
+Open **exer_1.Rmd** into your RStudio session and insert your code where indicated (remember to use the +C button). Don't forget to "knit" and save your work for submission!
 
 ## Plotting with ggplot2 
-GGPlot is a package that allows you to make a lot of different kinds of plots and has become increasingly popular. There are also many tutorials on how to use ggplot as well as example code that could be modified to fit the data you're interested in plotting. There is a really helpful cheatsheat (here)[https://www.rstudio.com/wp-content/uploads/2015/03/ggplot2-cheatsheet.pdf]
+
 There is a little bit of a learning curve for ggplot as the syntax is structured differently than base R plotting. One thing that remains the same and is even more noticible in ggplot is the iterative process of building a plot, one aspect at a time. 
 Let's demonstrate what ggplot can do with the states data set
 
@@ -207,4 +211,4 @@ ggplot(ChickWeight, aes(x=Time, y=weight, group=Diet, color=Diet))+
 ```
 
 ## Exercise 2 Plotting in ggplot2
-Read **exer_2.R** into your RStudio session and proceed with the exercise, filling in the commands. Don't forget to save your work for submission!
+Open **exer_2.Rmd** into your RStudio session and insert your code where indicated (remember to use the +C button). Don't forget to "knit" and save your work for submission!
