@@ -27,13 +27,13 @@ Within our `msleep` dataframe let's plot sleep_total by bodywt (bodyweight)
 library(ggplot2)
 data(msleep)
 
-plot(msleep$sleep_total,msleep$sleep_rem)
+plot(msleep$sleep_total,msleep$bodywt)
 # or plot response variable as a function "~" of the predictor variable
 ```
 
 
 ```{r, label='5-2', echo=T}
-plot(msleep$sleep_total~msleep$sleep_rem) #you'll notice this swaps the x and y axis
+plot(msleep$sleep_total~msleep$bodywt) #you'll notice this swaps the x and y axis
 ```
 
 ## Customizing your plot
