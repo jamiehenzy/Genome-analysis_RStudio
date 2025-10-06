@@ -28,7 +28,7 @@ library(ggplot2)
 data(msleep)
 
 plot(msleep$sleep_total,msleep$bodywt)
-# or plot response variable as a function "~" of the predictor variable
+
 ```
 
 
@@ -47,32 +47,32 @@ plot(msleep$sleep_total~msleep$bodywt) #you'll notice this swaps the x and y axi
   + `bty` changes (or removes) the border around the plot ("n" = no box, "7" = top + right, "L" = bottom+left, "C" top+left+bottom, "U" = left+bottom+right)
 You can view different point characters with `?pch`
 There are **many** color options in R. For some general colors you can write the name (blue, red, green, etc). There are apparently 657 named colors in R (including "slateblue3, and peachpuff4) but you can also use the color hexidecimal code for a given color. There are several comprehensives guides for colors in R online and one of which can be found (here)[https://www.nceas.ucsb.edu/sites/default/files/2020-04/colorPaletteCheatsheet.pdf]  
-Let's remake the total_sleep against sleep_rem plot and add-in some modifiers
+Let's remake the total_sleep against sleep_bodywt plot and add-in some modifiers
 
 ```{r, label='5-3', echo=T}
 #Choose a pch and make the color blue and give it a bottom+left border
-plot(msleep$sleep_total~msleep$sleep_rem, pch = 16, col="blue", bty="L")
+plot(msleep$sleep_total~msleep$bodywt, pch = 16, col="blue", bty="L")
 ```
 We can change the axes and title labels using "xlab", "ylab", and "main" arguments. Let's add labels to our plot.
 ```{r, label='5-4', echo=T}
 #Choose a pch and make the color blue and give it a bottom+left border
-plot(msleep$sleep_total~msleep$sleep_rem, pch = 16, col="blue", bty="L", xlab="REM Sleep (hours)", ylab= "Total Sleep (hours)") 
+plot(msleep$sleep_total~msleep$bodywt, pch = 16, col="blue", bty="L", xlab="Bodyweight (grams)", ylab= "Total Sleep (hours)") 
 ```
 
 You may want to find out which points are on a plot. You can use `identify()` in place of `plot()` to identify specific points within your plot. This function prints out the row numbers for the points that you selected. 
 
-
 We can also add lines to an existing plot with `ablines()`. Let's add a line fit from a linear model to our plot.
 
 ```{r, label='5-5', echo=T}
-#first make a plot
-plot(msleep$sleep_total~msleep$sleep_rem, pch = 16, col="blue", bty="L", xlab="REM Sleep (hours)", ylab= "Total Sleep (hours)") 
+#First make a plot
+plot(msleep$sleep_total~msleep$bodywt, pch = 16, col="blue", bty="L", xlab="Bodyweight (grams)", ylab= "Total Sleep (hours)") 
 #then add a line. The function lm runs a linear model on our x, y values.
-abline(lm(msleep$sleep_total~msleep$sleep_rem))
+abline(lm(msleep$sleep_total~msleep$bodywt))
 ```
 You can add a legend to a plot with `legend()` which needs you to specify the location. 
-To do this, let's make a cutoff for our points and color them by points above and below the cutoff. We'll use our subsetting skills from last week. Feel free to review that section (1.3).
-```{r, echo=T}
+To do this, let's make a cutoff for our points and color them by points above and below the cutoff. We'll use our subsetting skills from the previous tutorial. 
+
+```{r}
 #start by defining points by whether they are greater than sleep_total 16 and storing
 #first make a empty column named colors within the msleep dataframe
 msleep$colors=NA
@@ -80,8 +80,9 @@ msleep$colors=NA
 msleep$colors[msleep$sleep_total >= 17] <-"red"
 msleep$colors[msleep$sleep_total < 17] <-"black"
 ```
-```{r, label='5-6', echo=T}
-plot(msleep$sleep_total~msleep$sleep_rem, pch = 16, col=msleep$colors, bty="L", xlab="REM Sleep (hours)", ylab= "Total Sleep (hours)") 
+
+```{r, echo=T}
+plot(msleep$sleep_total~msleep$bodywt, pch = 16, col=msleep$colors, bty="L", xlab="Bodyweight (grams)", ylab= "Total Sleep (hours)") 
         
 ```
 In addition to scatterplots you can make histograms and boxplots in base R. The same parameter options (pch, col, ylab, xlab, etc) apply for these plots as well as scatterplots.
