@@ -2,16 +2,6 @@
 
 This material is double-adapted! It is drawn from an adapted version of the STEMinist_R materials which can be found [here](https://github.com/ecalfee/STEMinist_R.git). The adapted version appeared in Serena Caplin's marine genomics course.
 
-## Get the files into the directory from which you'll be working
-
-Before beginning this tutorial, copy into your own directory "RStudio.tar.gz" from the course data folder for this module. This is a compressed "tar ball" that contains a set of exercises. To uncompress it, use:
-
-```
-tar -xzvf RStudio.tar.gz
-```
-The contents include three sets of exercises that already have the questions listed as hash-comments. In this tutorial and the next, you'll read these into RStudio and fill in the commands as you go.
-
-
 ## Plotting 
 
 Launch an RStudio session and open a new script. As you work through the tutorial, comment the script. Save your session for your assignment submission.
