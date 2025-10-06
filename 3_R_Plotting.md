@@ -66,6 +66,7 @@ We can also add lines to an existing plot with `ablines()`. Let's add a line fit
 ```{r, label='5-5', echo=T}
 #First make a plot
 plot(msleep$sleep_total~msleep$bodywt, pch = 16, col="blue", bty="L", xlab="Bodyweight (grams)", ylab= "Total Sleep (hours)") 
+
 #then add a line. The function lm runs a linear model on our x, y values.
 abline(lm(msleep$sleep_total~msleep$bodywt))
 ```
@@ -76,6 +77,7 @@ To do this, let's make a cutoff for our points and color them by points above an
 #start by defining points by whether they are greater than sleep_total 16 and storing
 #first make a empty column named colors within the msleep dataframe
 msleep$colors=NA
+
 #store the colors "red" or "black" in the color column for the rows that satsify the following criteria.
 msleep$colors[msleep$sleep_total >= 17] <-"red"
 msleep$colors[msleep$sleep_total < 17] <-"black"
@@ -90,25 +92,26 @@ R will automatically plot a barplot if you give to the `plot()` function a conti
 ```{r, label='5-7', echo=T}
 #let's make a histogram of sleep_total and fill it with the color palette rainbow() which needs to know how many colors to use
 hist(msleep$sleep_total, col=rainbow(10))
-#let's make a boxplot of sleep_total and order making eachone a different color (how would you find out how many unique orders are in msleep?)
-#using plot
-#plot(msleep$sleep_total~as.factor(msleep$order), col=rainbow(19)) #this is commented out simply to avoid ploting the same plot twice
+
+#let's make a boxplot of sleep_total and order making each box a different color 
+plot(msleep$sleep_total~as.factor(msleep$order), col=rainbow(19)) 
 ```
 
 
 ```{r, label='5-8', echo=T}
-#or boxplot
+#Try a boxplot
 boxplot(msleep$sleep_total~as.factor(msleep$order), col=rainbow(19)) 
 ```
-Another example looking at sleep variation across the different types of consumers (carnivore, herbivore, insectivore and omnivore):
+Notice that the command above creates the exact same output as the previous command!
 
+Another example looking at sleep variation across the different types of consumers (carnivore, herbivore, insectivore and omnivore):
 
 ```{r, label='5-9', echo=T}
 plot(msleep$sleep_total~as.factor(msleep$vore),col=rainbow(4), xlab="REM Sleep (hours)", ylab= "Total Sleep (hours)")
 ```
-
+#### Don't forget to "knit" and save your work for submission! To view, first DOWNLOAD the .html file from OOD, then open it. 
 ## Exercise 1
-Open **exer_1.Rmd** into your RStudio session and insert your code where indicated (remember to use the +C button). Don't forget to "knit" and save your work for submission!
+Open **exer_1.Rmd** into your RStudio session and insert your code where indicated (remember to use the +C button). Don't forget to "knit" and save your work for submission! To view, first DOWNLOAD the .html file from OOD, then open it. 
 
 ## Plotting with ggplot2 
 
