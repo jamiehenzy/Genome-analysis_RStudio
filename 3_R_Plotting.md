@@ -47,6 +47,7 @@ plot(msleep$sleep_total~msleep$bodywt) #you'll notice this swaps the x and y axi
   + `bty` changes (or removes) the border around the plot ("n" = no box, "7" = top + right, "L" = bottom+left, "C" top+left+bottom, "U" = left+bottom+right)
 You can view different point characters with `?pch`
 There are **many** color options in R. For some general colors you can write the name (blue, red, green, etc). There are apparently 657 named colors in R (including "slateblue3, and peachpuff4) but you can also use the color hexidecimal code for a given color. There are several comprehensives guides for colors in R online and one of which can be found (here)[https://www.nceas.ucsb.edu/sites/default/files/2020-04/colorPaletteCheatsheet.pdf]  
+
 Let's remake the total_sleep against sleep_bodywt plot and add-in some modifiers
 
 ```{r, label='5-3', echo=T}
