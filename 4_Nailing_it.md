@@ -1,3 +1,6 @@
+### Instructions and exercise.
+Read into RStudio the exer_3.R script (in data/RStudio) as an R markdown document, which has seven questions for the exercise. Above the exercises, put your comments and commands for this tutorial. Finish by performing the exercises. Don't forget to knit and save for submission!
+
 
 
 # For loops and the apply family of functions
@@ -111,6 +114,3 @@ apply(states,
       2, # apply over columns of my_states
       function(x) tapply(x, state.region, mean)) # each column = variable of interest for tapply
 ```
-
-> ### Exercise: apply and tapply
-Read into RStudio the exer_3.R script and fill in the commands as needed. Don't forget to save your work for submission!
