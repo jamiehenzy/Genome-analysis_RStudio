@@ -1,4 +1,19 @@
-# For loops and the apply family of functions
+---
+title: 
+author: 
+date:
+output:
+  bookdown::html_book:
+    toc: yes
+    css: toc.css
+---
+```{r setupweek7, include=FALSE}
+knitr::opts_chunk$set(fig.width = 8, collapse = TRUE)
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Week 7 For loops and the apply family of functions
+
 A few useful commands: function(), is.na, which, var, length, for(){ }, 
  points, print, paste, plot, unique, sample
  
@@ -92,6 +107,134 @@ tapply(states$Frost, state.region, mean) # state.region contains the region info
 apply(states,
       2, # apply over columns of my_states
       function(x) tapply(x, state.region, mean)) # each column = variable of interest for tapply
+```
+## Exercise 2.3 apply and tapply
+> # Exercise 2.3
+A few useful commands: function(){ }, apply(), tapply(), hist(), dim(), prod(), sd()
+> 1. what is the average population, income, and area of all 50 states ins the `states` dataset
+
+<details><summary><span style="color: red;">Solution</span></summary>
+<p>
+
+```{r, echo=T}
+# load state data
+#?state
+data(state)
+# this data is stored in a slightly different way than other datasets we've used so far
+states = as.data.frame(state.x77) # run this line of code to avoid later confusion
+apply(states,2,mean)
+#or an alternative that will get you only the columns requested
+colMeans(states[,c("Population", "Income", "Area")])
+```
+
+</p>
+</details>
+
+> 2. what is the average area of the states from different regions of the country?
+Hint: use the object state.region in your environment 
+
+<details><summary><span style="color: red;">Solution</span></summary>
+<p>
+```{r, echo=T}
+tapply(states$Area, state.region, mean)
+```
+
+<p>
+</details>
+
+> 3. Plot a histogram for each column in the states data (Population, Income, Illiteracy etc.)
+
+<details><summary><span style="color: red;">Solution</span></summary>
+<p>
+
+```{r, label='5-32', echo=T}
+#how many columns do we have? 
+dim(states)
+par(mfrow = c(2,2)) # make your plot window show 2 rows and 2 columns at once
+apply(states, 2, hist)
+```
+
+</p>
+</details>
+
+> 4. let's assume that we don't want to live in a state with high illiteracy, high murder, and many freezing days; also assume that each of these factors contribute equally to our opinion (Illiteracy * Murder * Frost) = undesirable
+  What 10 states should we avoid? # hint use prod(); and maybe order()
+  
+<details><summary><span style="color: red;">Solution</span></summary>
+<p>
+
+```{r, echo=T}
+livability <- apply(states[,c("Illiteracy", "Murder", "Frost")], 1, prod) # subset to variables of interest
+livability[order(livability, decreasing = T)][1:10] # top ten least livable states
+```
+
+</p>
+</details>
+
+> 5. use sapply() to plot a histogram of the data below 4 times, in 4 different colors. 
+  For extra style, title the plot by it's color, e.g. the red plot is titled "red"
+  
+```{r, echo=T}
+data_to_plot = c(1,3,4,5,6,3,3,4,5,1,1,1,1,1)
+par(mfrow = c(2,2))# run this line to set your plot to make 4 plots in total (2rows, 2columns)
+```
+
+<details><summary><span style="color: red;">Solution</span></summary>
+<p>
+
+```{r, label='5-30', echo=T}
+data_to_plot = c(1,3,4,5,6,3,3,4,5,1,1,1,1,1)
+my_colors = c("deeppink", "red", "blue", "darkgreen")
+par(mfrow = c(2,2)) # extra styling, plots in a 2x2 grid
+sapply(my_colors, FUN = function(i) hist(data_to_plot, main = i, col = i))
+```
+
+</p>
+</details>
+
+> 6. Standardize all the variables in the states dataset and save your answer to a new dataframe, states_standardized
+Hint: to standardize a variable, you subtract the mean and divide by the standard deviation (sd)
+
+<details><summary><span style="color: red;">Solution</span></summary>
+<p>
+
+```{r, echo=T}
+states_standardized = apply(states, 2, function(x) (x-mean(x))/sd(x))
+# original:
+head(states)
+# standardized
+head(states_standardized)
+```
+
+</p>
+</details>
+
+> 7. Create a histogram again for each variable in the states data, but this time label each histogram with the variable names when you plot
+Hint: instead of using apply to iterate over the columns themselves, you can often iterate over the column names with sapply
+
+<details><summary><span style="color: red;">Solution</span></summary>
+<p>
+```{r, label='5-31', echo=T}
+par(mfrow = c(2,2))
+sapply(colnames(states), function(x)hist(states[ , x],main = x, xlab = x,col = "darkblue"))
+```
+</p>
+</details>
+
+
+For the final day covering basics in R we will have a coding session where we tackle a challenge exercise on a dataset. 
+
+Please download the exercise here 
+```html
+wget https://raw.githubusercontent.com/BayLab/MarineGenomicsData/main/R_Final_Challenges/chickWeightChallenge_week7_semester.R
+```
+
+
+And the solutions are here
+
+```html
+
+wget https://raw.githubusercontent.com/BayLab/MarineGenomicsData/main/R_Final_Challenges/ChickWeight_Challenge_SOLUTIONS.pdf
 ```
 ## Exercise 3: apply and tapply
 Read in the exer_3.R script and fill in the commands as needed. Don't forget to save your work for submission!
