@@ -1,10 +1,7 @@
 
 # For loops and the apply family of functions
-A few useful commands: function(), is.na, which, var, length, for(){ }, 
- points, print, paste, plot, unique, sample
- 
-for loops: 
-In many languages, the best way to repeat a calculation is to use a for-loop:
+
+As we saw with UNIX, the best way to repeat a calculation is to use a for-loop:
 For example, we could square each number 1 to 10
 
 ```{r, echo=T}
