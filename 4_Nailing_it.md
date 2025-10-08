@@ -6,7 +6,7 @@ For example, we could square each number 1 to 10
 
 ```{r, echo=T}
 squares = rep(NA, 10) # use rep to create a vector length 10 of NAs to store the result
-for (i in 1:10) { # for loop
+for (i in 1:10) { 
   squares[i] = i^2
 }
 squares
