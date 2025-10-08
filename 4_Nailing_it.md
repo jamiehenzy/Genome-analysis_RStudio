@@ -12,12 +12,12 @@ for (i in 1:10) {
 squares
 ```
 
-An alternative to for-loops in R is using the 'apply' family, while for-loops apply a function to one item at a time and then go on to the next one, "apply" applies functions to every item at once
+An alternative to for-loops in R is using the 'apply' family. While for-loops apply a function to one item at a time and then go on to the next one, "apply" applies functions to every item at once.
 
 ## apply family
 
 ### sapply
-There are several apply functions that vary in the output the return and vary somewhat in the input they require. We'll go over **sapply** "simplifying" apply which returns a vector, first.
+There are several apply functions that vary in the output they return and the input they require. We'll first go over **sapply** -- "simplifying" apply, which returns a vector.
 
 ```{r, echo=T}
 #?sapply 
@@ -33,7 +33,7 @@ areaCircle = function(r){
 }
 sapply(1:10, areaCircle)
 
-# in R, we can also just use short-hand for simple vector calculations:
+# We can also just use short-hand for simple vector calculations:
 pi*(1:10)^2
 
 # but unlike the short-hand, sapply can also iterate over elements in a list
@@ -58,8 +58,9 @@ sapply(my_list, plot) # plot my_list with sapply
 ### apply 
 The apply function is highly useful for applying a function to rows or columns of a dataframe or matrix. 
 Example syntax for the dataframe or matrix X:
-`apply(X = over this object, MARGIN 1 for rows or 2 for columns,FUN = apply this function)`
-You can also use apply on a dataframe we worked with earlier the states data to plot each column against Population
+`apply(X = over this object, MARGIN 1 for rows or 2 for columns, FUN = apply this function)`
+
+You can also use apply on a dataframe such as the states data to plot each column against Population:
 
 ```{r, echo=T}
 #load in the data
@@ -84,7 +85,7 @@ We can do the same things across all rows. But if you want to plot all the rows 
 apply(states, 1, sum)
 ```
 ### lapply -- "list" apply
-We'll just show a quick example of lapply. It works in the same way as sapply, but returns a list instead of a vector.
+Here's a quick example of lapply. It works in the same way as sapply, but returns a list instead of a vector.
 
 ```{r, echo=T}
 lapply(1:10, function(x)  x^2) # lapply returns list
@@ -92,7 +93,7 @@ sapply(1:10, function(x)  x^2, simplify = FALSE) # same as an lapply
 sapply(1:10, function(x)  x^2) # default is simplify = TRUE which retuns a vector
 ```
 ### tapply - "per Type" apply 
-The tapply function is one of my favorites because it is a really great way to sumarize data that has multiple categorical variables that can be 
+The tapply function is a really great way to sumarize data that has multiple categorical variables: 
 
 ```{r, echo=T}
 # load state data again, you can skip this if you already have it loaded
