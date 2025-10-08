@@ -110,27 +110,10 @@ apply(states,
       2, # apply over columns of my_states
       function(x) tapply(x, state.region, mean)) # each column = variable of interest for tapply
 ```
-## Exercise 2.3 apply and tapply
+
 > # Exercise 2.3
 
 > 1. what is the average population, income, and area of all 50 states ins the `states` dataset
-
-<details><summary><span style="color: red;">Solution</span></summary>
-<p>
-
-```{r, echo=T}
-# load state data
-#?state
-data(state)
-# this data is stored in a slightly different way than other datasets we've used so far
-states = as.data.frame(state.x77) # run this line of code to avoid later confusion
-apply(states,2,mean)
-#or an alternative that will get you only the columns requested
-colMeans(states[,c("Population", "Income", "Area")])
-```
-
-</p>
-</details>
 
 > 2. what is the average area of the states from different regions of the country?
 Hint: use the object state.region in your environment 
