@@ -54,7 +54,7 @@ dat.long %>%
   scale_fill_gradient(low = 'white', high = 'red')
 
 dev.off()
-
+```
 #### Save the data
 ```{r}
 ggsave(p, filename = 'heatmap_save1.pdf', width = 10, height = 8)
