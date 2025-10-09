@@ -1,12 +1,6 @@
 ### Prior to starting an RStudio session, download GSE183947_fpkm.csv.gz from GEO database.
 ### Unzip the file and place somewhere in your home or scratch directory.
 
----
-title: "wrangle"
-author: "Jamie"
-date: "2025-10-09"
-output: html_document
----
 #### Install and load necessary packages
 ```{r}
 BiocManager::install("GEOquery")
@@ -33,9 +27,9 @@ gse <- getGEO(GEO = 'GSE183947', GSEMatrix = TRUE)
 metadata <- pData(phenoData(gse[[1]]))
 ```
 #### For each step, check before continuing by using head(); assign to variable only after checked
-#### Select only the columns we want
-#### rename columns 2 and 3
-#### clean up descriptions in col 2 and 3
+#### + Select only the columns we want
+#### + Rename columns 2 and 3
+#### + Clean up descriptions in col 2 and 3
 ```{r}
 metadata.modified <- select(metadata, c(1, 10, 11, 17)) %>%
   rename(tissue = characteristics_ch1) %>%
