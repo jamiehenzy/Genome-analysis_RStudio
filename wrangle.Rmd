@@ -1,3 +1,6 @@
+### Prior to starting an RStudio session, download GSE183947_fpkm.csv.gz from GEO database.
+### Unzip the file and place somewhere in your home or scratch directory.
+
 ---
 title: "wrangle"
 author: "Jamie"
@@ -57,4 +60,3 @@ dat.long <- dat.long %>%
 ```{r}
 write.table(metadata.modified, "course_datasets/GSE/GSE183947_long_format.txt", sep = "\t", row.names = FALSE, quote = FALSE)
 ```
-[jhenzy@explorer-02 ~]$ 
