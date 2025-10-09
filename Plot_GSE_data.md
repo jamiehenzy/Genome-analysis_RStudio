@@ -4,7 +4,7 @@ library(tidyverse)
 library(ggplot2)
 ```
 
-#### dat.long to be used generated from previous demo
+#### Use dat.long from "wrangling" exercise
 ```{r}
 dat.long <- read.delim('../data/GSE183947_long_format.txt', header = T)
 ```
