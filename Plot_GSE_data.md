@@ -8,9 +8,7 @@ library(ggplot2)
 ```{r}
 dat.long <- read.delim('../data/GSE183947_long_format.txt', header = T)
 ```
-#### basic format for ggplot
-#### ggplot(data, aes(x = variable, y = variable1)) +
-####   geom_col()
+#### basic format for ggplot: ggplot(data, aes(x = variable, y = variable1)) + geom_col()
 
 #### 1. barplot
 ```{r}
